@@ -31,6 +31,7 @@ abstract class $EntryJobCopyWith<$Res> {
   @useResult
   $Res call({Entry entry, Job job});
 
+  $EntryCopyWith<$Res> get entry;
   $JobCopyWith<$Res> get job;
 }
 
@@ -64,6 +65,14 @@ class _$EntryJobCopyWithImpl<$Res, $Val extends EntryJob>
 
   @override
   @pragma('vm:prefer-inline')
+  $EntryCopyWith<$Res> get entry {
+    return $EntryCopyWith<$Res>(_value.entry, (value) {
+      return _then(_value.copyWith(entry: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
   $JobCopyWith<$Res> get job {
     return $JobCopyWith<$Res>(_value.job, (value) {
       return _then(_value.copyWith(job: value) as $Val);
@@ -81,6 +90,8 @@ abstract class _$$EntryJobImplCopyWith<$Res>
   @useResult
   $Res call({Entry entry, Job job});
 
+  @override
+  $EntryCopyWith<$Res> get entry;
   @override
   $JobCopyWith<$Res> get job;
 }
