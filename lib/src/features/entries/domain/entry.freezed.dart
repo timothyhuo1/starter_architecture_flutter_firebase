@@ -195,15 +195,6 @@ class _$EntryImpl implements _Entry {
     );
   }
 
-  @override
-  Map<String, dynamic> toMap() {
-    // TODO: implement toMap
-    throw UnimplementedError();
-  }
-
-  @override
-  // TODO: implement durationInHours
-  double get durationInHours => throw UnimplementedError();
 }
 
 abstract class _Entry implements Entry {

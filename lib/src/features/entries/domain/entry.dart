@@ -19,9 +19,6 @@ class Entry with _$Entry {
     required String comment,
   }) = _Entry;
 
-  double get durationInHours =>
-      end.difference(start).inSeconds.toDouble() / 3600.0;
-
   factory Entry.fromJson(Map<String, dynamic> json) => _$EntryFromJson(json);
 
   factory Entry.fromMap(Map<dynamic, dynamic> value, EntryID id) {
@@ -35,6 +32,11 @@ class Entry with _$Entry {
       comment: value['comment'] as String? ?? '',
     );
   }
+}
+
+extension EntryMixin on Entry {
+  double get durationInHours =>
+      end.difference(start).inSeconds.toDouble() / 3600.0;
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{

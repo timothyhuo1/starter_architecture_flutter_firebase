@@ -16,13 +16,6 @@ class Job with _$Job {
   factory Job.fromJson(Map<String, dynamic> json) =>
       _$JobFromJson(json);
 
-  Map<String, dynamic> toMap() {
-    return {
-      'name': name,
-      'ratePerHour': ratePerHour,
-    };
-  }
-
   factory Job.fromMap(Map<String, dynamic> data, String id) {
     final name = data['name'] as String;
     final ratePerHour = data['ratePerHour'] as int;
@@ -31,5 +24,14 @@ class Job with _$Job {
       name: name,
       ratePerHour: ratePerHour,
     );
+  }
+}
+
+extension JobMixin on Job {
+  Map<String, dynamic> toMap() {
+    return {
+      'name': name,
+      'ratePerHour': ratePerHour,
+    };
   }
 }

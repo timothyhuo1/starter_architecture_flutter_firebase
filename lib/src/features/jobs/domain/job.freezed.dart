@@ -167,12 +167,6 @@ class _$JobImpl with DiagnosticableTreeMixin implements _Job {
       this,
     );
   }
-
-  @override
-  Map<String, dynamic> toMap() {
-    // TODO: implement toMap
-    throw UnimplementedError();
-  }
 }
 
 abstract class _Job implements Job {
